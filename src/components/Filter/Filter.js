@@ -34,6 +34,7 @@ export default function Filter(){
             setSort(null)
     }
 
+    //for undisclosed navbar
     const handleProductSearchMobile = ()=>{
         const value = searchMobileFiltertRef.current.value.trim();
             dispatch(setSearchQuery(value))
