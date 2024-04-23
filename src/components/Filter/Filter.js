@@ -34,6 +34,13 @@ export default function Filter(){
             setSort(null)
     }
 
+    const handleProductSearchMobile = ()=>{
+        const value = searchMobileFiltertRef.current.value.trim();
+            dispatch(setSearchQuery(value))
+            dispatch(filterProducts())
+            setSort(null)
+    }
+
     const handleCheckboxChange = (event) => {
         const { value } = event.target;
         const isChecked = event.target.checked;
@@ -113,7 +120,7 @@ export default function Filter(){
 
             <div className={styles.mFilterTop}>
 
-                <input type="text" placeholder='search product' ref={searchMobileFiltertRef} className={styles.mSearch}/>
+                <input type="text" placeholder='search product' ref={searchMobileFiltertRef} className={styles.mSearch}  onChange={handleProductSearchMobile}/>
                 <Dropdown autoClose="outside" className={styles.dropdown}>
                 <Dropdown.Toggle variant="success" id="dropdown-basic" >
                    <span className={styles.dropdownHeader}>Categories</span> 
@@ -135,9 +142,9 @@ export default function Filter(){
             <div className={styles.mFilterBottom}>
         
                 <div className={styles.priceFilter}>
-                    <h4 className={styles.priceDesc}>Filter by price: &#8377; 10000</h4>
+                    <h4 className={styles.priceDesc}>Filter by price: &#8377; {priceInput}</h4>
                     {/* <p>&#8377; 10000</p> */}
-                    <input type="range"  value={10000} min="5000" max="20000" />
+                    <input type="range"  min={minProductPrice} max={maxProductPrice} value={priceInput} onChange={handlePriceChange} />
                 </div>
 
                 <div className={styles.mSortName}>
@@ -153,43 +160,3 @@ export default function Filter(){
         </>
     )
 }
-
-
-
-
-
-
-{/* <Dropdown autoClose="outside">
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Categories
-                </Dropdown.Toggle>
-                <Dropdown.Menu className={styles.catMenu}>
-                {categories.map((category, index) => (
-                    <Dropdown.Item key={index} as="div" >
-                        <Form.Check
-                            type="checkbox"
-                            id={`checkbox-${index}`}
-                            label={category}
-                            value={category}
-                            // onChange={handleCheckboxChange}
-                        />
-                    </Dropdown.Item>
-                ))}
-                    
-                </Dropdown.Menu>
-                </Dropdown> */}
-
-
-
-                // <div className={styles.mCatFilter}>
-                //     <div className={styles.mCatFilterHeader}><p>Categories &#8595;</p></div>
-
-                //     <ul className={styles.catMenu}>
-                //     {categories.map((category, index) => (
-                //         <li className={styles.catList}>
-                //             <input type="checkbox" key={index} value={category} name={category} id={category} />
-                //             <span>{category}</span>
-                //          </li>
-                //     ))}
-                //     </ul>
-                // </div>
