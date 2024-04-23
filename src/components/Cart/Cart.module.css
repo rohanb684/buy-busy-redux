@@ -1,0 +1,118 @@
+.cartWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.cardContainer{
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+.cartHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.cartHeader button{
+    outline: none;
+    border: none;
+    background-color: rgb(216, 33, 33);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+.cartHeader button:hover{
+    background-color: rgb(179, 23, 23);
+}
+
+hr{
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.cartFooter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.costDetails h4{
+    font-size: 1.2rem;
+}
+.orderButton button{
+    outline: none;
+    border: none;
+    background-color: rgb(27, 148, 27);
+    color: white;
+    padding: 4px 6px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.orderButton button:hover{
+    background-color: rgb(19, 125, 19);
+}
+.orderPlaced{
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background-color: whitesmoke;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.orderPlaced h1{
+    color: #2EB447;
+    font-size: 7rem;
+}
+.animation{
+    height: 60%;
+}
+.hidden{
+    display: none;
+}
+
+/* --Media Screens--- */
+@media only screen and (max-width: 500px) {
+    .cartWrapper{
+        padding: 0 0.5rem;
+    }
+    .costDetails h4{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .cartWrapper{
+        padding: 0 0.5rem;
+    }
+    .costDetails h4{
+        font-size: 1.1rem;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .cartWrapper{
+        padding: 0 1rem;
+    }
+    .costDetails h4{
+        font-size: 1.1rem;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

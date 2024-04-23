@@ -1,0 +1,177 @@
+
+.card{
+    display: flex;
+    height: 10rem;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.picture{
+    height: 100%;
+    min-width: 30%;
+}
+.picture img{
+    height: 100%;
+}
+
+.cardLeft{
+    display: flex;
+    gap: 1rem;
+    width: 70%;
+}
+.cardDetails{
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines you want */
+    -webkit-box-orient: vertical;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cardRight{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.cardRight p{
+    margin: 0;
+}
+.delIcon{
+    font-size: 1.7rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.cartQty{
+    display: flex;
+    gap: 10px;
+    
+}
+.cartQty p{
+    margin: 0;
+    
+}
+
+.qty{
+    /* border: 1px solid black; */
+    width: 1.7rem;
+    background-color: rgb(237, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decQty, .incQty{
+    width: 1.7rem;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* --Media Screens--- */
+@media only screen and (max-width: 400px) {
+    .picture{
+        width: 7%;
+    }
+    .picture img{
+        width: 100%;
+        height: auto;
+    }
+    .cardDetails{
+        margin-left: 5px;
+    }
+    .cardDetails h4{
+        font-size: 0.9rem;
+     }
+     .productPrice, .cardRight p{
+        font-size: 0.9rem;
+     }
+     .delIcon{
+        font-size: 1.3rem;
+     }
+     .decQty, .incQty{
+        width: 1.4rem;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 400px) and (max-width:500px) {
+    .picture{
+        width: 10%;
+    }
+    .picture img{
+        width: 100%;
+        height: auto;
+    }
+    .cardDetails{
+        margin-left: 5px;
+    }
+    .cardDetails h4{
+        font-size: 1rem;
+     }
+     .productPrice, .cardRight p{
+        font-size: 0.9rem;
+     }
+     .delIcon{
+        font-size: 1.3rem;
+     }
+     .decQty, .incQty{
+        width: 1.4rem;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .cardDetails{
+        margin-left: 10px;
+    }
+    .cardDetails h4{
+        font-size: 1rem;
+     }
+     .productPrice, .cardRight p{
+        font-size: 0.9rem;
+     }
+     .delIcon{
+        font-size: 1.3rem;
+     }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .cardDetails h4{
+        font-size: 1.1rem;
+     }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+ .cardDetails h4{
+    font-size: 1.3rem;
+ }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

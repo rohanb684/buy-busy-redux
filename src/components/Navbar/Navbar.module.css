@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .wrapper{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+  }
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  
+    font-size: 18px;
+  }
+  
+  /* navbar */
+  .navbar {
+    background-color: #3B82FD;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+    width: 100%;
+    color: white;
+    flex-shrink: 0;
+    
+  }
+  
+  
+  /* logo  */
+  .logo {
+    font-size: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  /* ul  */
+  .navMenu {  
+    margin: 0;
+    display: flex;
+    text-align: center;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    z-index: 999;
+    
+  }
+
+  .displayName{
+    font-size: 1.7rem;
+    color: antiquewhite;
+    font-weight: 700;
+  }
+
+  .cartIcon{
+    font-size: 2rem;
+    color: white;
+    position: relative;
+  }
+
+  .itemCount{
+    border-radius: 50%;
+    display: inline-flex;  /* Changed from flex to inline-flex */
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;       /* A reasonable minimum size */
+    min-height: 20px;      /* Keep the minimum height same as minimum width */
+    height: auto;          /* Height is based on content and padding */
+    width: auto;           /* Width is based on content and padding */
+    margin: 0;
+    padding: 0px 2px;        
+    font-size: 1rem;
+    position: absolute;
+    background-color: red;
+    top: 0;
+    right: 0;
+    
+  }
+  .itemCount p{
+    margin: 0;
+    padding: 0;
+  }
+  .logout, .signIn{
+    color: white;
+  }
+  .orders{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .hamburger {
+    display: none;
+    /* cursor: pointer; */
+  }
+  
+  /* media queries */
+  
+  @media screen and (max-width: 780px){
+    
+    /* hamburger */
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      
+    }
+  
+    .bar {
+          background-color: #120f0b;
+          width: 20px;
+          height: 3px;
+          display: block;
+          margin: 5px;
+          -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+          
+      }
+  
+    /* adding active class to the bars  */
+    .hamburger.active .bar:nth-child(2){
+      opacity: 0;
+      
+    }
+    .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+      
+    }
+    .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+      
+    }
+  
+  
+    /* navMenu */
+  
+    .navMenu{
+      position: absolute;
+      flex-direction: column;
+      gap: 0;
+      top: 70px;
+      left: -100%;
+      text-align: start;
+      width: 100%;  
+      transition: 0.7s ease-in-out;
+      background-color: aliceblue;
+      padding: 10px;
+      box-shadow: 0 8px 6px -6px gray;
+    }
+    .navMenu a{
+      color: black;
+    }
+  
+    .navMenu.active{
+      left: 0;
+    }
+  
+    .navMenu li {
+      margin: 10px 0;
+    }
+  }
+
+ 

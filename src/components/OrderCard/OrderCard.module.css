@@ -1,0 +1,125 @@
+h4, p{
+    margin: 0;
+}
+
+.orderCard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+.cardTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.cardTop p{
+    font-size: 0.9rem;
+}
+.cardBottom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.cardLeft{
+    max-width: 60%;
+}
+.name{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+hr{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .cardTop h4{
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .cardTop p{
+        font-size: 0.8rem;
+    }
+    .name{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .itemCount{
+        font-size: 0.9rem;
+    }
+    .cardRight p{
+        font-size: 0.9rem;
+    }
+    .footer h6{
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    .cardTop h4{
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .cardTop p{
+        font-size: 0.8rem;
+    }
+    .name{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .itemCount{
+        font-size: 0.9rem;
+    }
+    .cardRight p{
+        font-size: 0.9rem;
+    }
+    .footer h6{
+        font-size: 0.9rem;
+    }
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .cardTop h4{
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .cardTop p{
+        font-size: 0.8rem;
+    }
+    .name{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    .cardTop h4{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    .cardTop p{
+        font-size: 0.8rem;
+    }
+    .name{
+        font-size: 1.1rem;
+    }
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
