@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Navbar.module.css'
 import { useEffect, useState } from 'react';
-import  {Outlet, Link, useNavigate} from 'react-router-dom';
+import  {Outlet, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { logout } from '../../redux/reducers/authReducer';
 import { fetchCart } from '../../redux/reducers/cartReducer';

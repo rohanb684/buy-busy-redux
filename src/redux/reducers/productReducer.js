@@ -30,7 +30,7 @@ const productSlice = createSlice({
             }
         },
         removeCategory: (state, action)=>{
-            state.category = state.category.filter(cat => cat != action.payload);
+            state.category = state.category.filter(cat => cat !== action.payload);
 
         },
         setSearchQuery: (state, action) =>{

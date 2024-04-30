@@ -1,7 +1,7 @@
 import styles from './CartCard.module.css';
 import { MdDeleteForever } from "react-icons/md";
 import { addToCart,decreaseQuantity,removeProduct } from '../../redux/reducers/cartReducer';
-import { useSelector, useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 export default function CartCard(props){
     const dispatch = useDispatch();

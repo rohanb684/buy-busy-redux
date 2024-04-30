@@ -1,9 +1,8 @@
 import './App.css';
 import { useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Slide, ToastContainer } from 'react-toastify';
 import {useDispatch} from 'react-redux';
-import { setUser, clearUser } from './redux/reducers/authReducer';
+import { setUser } from './redux/reducers/authReducer';
 import db, { auth } from './firebaseInit';
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged} from "firebase/auth";
@@ -30,7 +29,7 @@ function App() {
       });
 
       return unsubscriber // Cleanup subscription on unmount
-  }, []);
+  }, [dispatch]);
 
 
   const router = createBrowserRouter([

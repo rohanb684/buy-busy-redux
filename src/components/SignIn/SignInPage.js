@@ -49,7 +49,7 @@ export default function SignInPage(){
                 </form>
                 <p>Not Registered ? <Link to={'/signUp'} >SignUp</Link></p>
                 {authStatus === 'loading' && <p>Signing In...</p>}
-                {authStatus === 'failed' && authError=="Firebase: Error (auth/email-already-in-use)." && <p>Email Already In use</p>} 
+                {authStatus === 'failed' && authError==="Firebase: Error (auth/email-already-in-use)." && <p>Email Already In use</p>} 
             </div>
         </div>
     )

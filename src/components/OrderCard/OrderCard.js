@@ -1,11 +1,5 @@
 import styles from './OrderCard.module.css';
-const data =  {
-    productId: "1",
-    product: "Men's Round Neck Cotton Blend Black T-Shirt",
-    image: "https://rukminim1.flixcart.com/image/416/416/xif0q/t-shirt/t/e/0/l-st-theboys-black-smartees-original-imagnqszzzzyuzru.jpeg?q=70",
-    price: 199,
-    category: "Men's Clothing"
-}
+
 
 export default function OrderCard ({orderNum, order}){
     const {orderDate, orderItems, totalCost} = order;

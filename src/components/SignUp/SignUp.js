@@ -49,7 +49,7 @@ export default function SignUp(){
                         <button type='submit'>Sign up</button>
                     </form>
                     {authStatus === 'loading' && <p>Registering...</p>}
-                    {authStatus === 'failed' && authError=="Firebase: Error (auth/email-already-in-use)." && <p>Email Already In use</p>}
+                    {authStatus === 'failed' && authError==="Firebase: Error (auth/email-already-in-use)." && <p>Email Already In use</p>}
                 </div>
             </div>
         )

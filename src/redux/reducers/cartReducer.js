@@ -17,8 +17,8 @@ export const addToCart = createAsyncThunk(
             // console.log("items in addToCart(): ")
             // console.log(items);
             
-            const itemIndex = items.findIndex((item)=> item.productId==product.productId);
-            if(itemIndex != -1){
+            const itemIndex = items.findIndex((item)=> item.productId===product.productId);
+            if(itemIndex !== -1){
                 // console.log("found product");
                 const updatedItems = items.map((item, index) =>
         index === itemIndex ? { ...item, count: item.count + 1 } : item
@@ -95,16 +95,16 @@ export const decreaseQuantity = createAsyncThunk(
             const items = cartState.items;
             const user =  thunkApi.getState().auth.user;
 
-            const itemIndex = items.findIndex((item)=>item.productId == data.productId);
+            const itemIndex = items.findIndex((item)=>item.productId === data.productId);
 
-            if(itemIndex != -1){
+            if(itemIndex !== -1){
                 let updatedItems;
                 if(items[itemIndex].count >1 ){
                     updatedItems = items.map((item, index) =>
                     index === itemIndex ? { ...item, count: item.count -1 } : item
                 );
                 }else{
-                    updatedItems = items.filter((item)=>item.productId != data.productId);
+                    updatedItems = items.filter((item)=>item.productId !== data.productId);
                 }
                 
             const updatedCart = {
@@ -134,11 +134,11 @@ export const removeProduct = createAsyncThunk(
             const items = cartState.items;
             const user =  thunkApi.getState().auth.user;
 
-            const removedItem = items.find((item)=>item.productId == data.productId);
+            const removedItem = items.find((item)=>item.productId === data.productId);
             
 
             if(removedItem){
-            const updatedItems = items.filter((item)=>item.productId != data.productId);
+            const updatedItems = items.filter((item)=>item.productId !== data.productId);
 
             const updatedCart = {
                 cost: cartState.cost - (data.price * removedItem.count),
@@ -277,6 +277,7 @@ const cartSlice = createSlice({
         })
         .addCase(fetchCart.pending, (state)=>{
             state.status = 'loading';
+            console.log('cart loading');
         })
         .addCase(fetchCart.fulfilled, (state, action)=>{
             // console.log("action.payload: ")
@@ -286,10 +287,12 @@ const cartSlice = createSlice({
             state.count = action.payload.count;
             state.status = 'idle';
             state.error = null;
+            console.log('cart fulfilled');
         })
         .addCase(fetchCart.rejected, (state, action)=>{
             state.status = 'failed';
             state.error = action.error.message;
+            console.log('cart failed');
         })
         .addCase(decreaseQuantity.fulfilled, (state, action)=>{
             state.items = [...action.payload.items];

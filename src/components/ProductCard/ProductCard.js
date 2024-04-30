@@ -27,7 +27,7 @@ export default function ProductCard(props){
     }
 
     const handDecrease = ()=>{
-        if(quantity!=0){
+        if(quantity!==0){
             dispatch(decreaseQuantity(props.value))
             setQuantity(prev=> --prev)
         }
@@ -48,14 +48,14 @@ export default function ProductCard(props){
     return(
         <div className={styles.productCard}>
             <div className={styles.productImage} >
-                <img src={image} alt="product image" />
+                <img src={image} alt="product" />
             </div>
             <div className={styles.cardBody}>
                 <h3>{product}</h3>
                 <p>&#8377; {price}</p>
                 <p>Category: {category}</p>
                 {!user ? <button onClick={handleloggedOut}>Add to cart</button> : 
-                (quantity == 0 ? <button onClick={handleAddtoCart}>Add to cart</button> :
+                (quantity === 0 ? <button onClick={handleAddtoCart}>Add to cart</button> :
                 <div className={styles.cartQty}>
                     <p className={styles.decQty} onClick={handDecrease}>-</p>
                     <p className={styles.qty}>{quantity}</p>

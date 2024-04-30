@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import styles from './Filter.module.css'
 import { data } from '../../utils/data';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Form from 'react-bootstrap/Form';
+
 
 import { setMaxPrice, setCategory,removeCategory,
          setSearchQuery, filterProducts, sortLowToHigh,
@@ -65,7 +65,7 @@ export default function Filter(){
     };
 
     const handleLow = () =>{
-        if(sort == 'low'){
+        if(sort === 'low'){
             return;
         }
         dispatch(sortLowToHigh());
@@ -73,7 +73,7 @@ export default function Filter(){
 
     }
     const handleHigh = () =>{
-        if(sort == 'high'){
+        if(sort === 'high'){
             return;
         }
         dispatch(sortHighToLow());
@@ -90,8 +90,8 @@ export default function Filter(){
            <div className={styles.categories}>
             <h2>Categories</h2>
             <ul>
-                {categories.map((item)=>(
-                    <li>
+                {categories.map((item, index)=>(
+                    <li key={index}>    
                     <input type="checkbox" name={item} value={item} onChange={handleCheckboxChange}/>
                     <label htmlFor={item}>{item}</label>
                     </li>
@@ -108,9 +108,9 @@ export default function Filter(){
            <div className={styles.sortPrice}>
                 <h4>Sort By Price</h4>
                 <div className={styles.sortName}>
-                    <p className={sort =="low" ? styles.sortActive : styles.sortIncative}
+                    <p className={sort === "low" ? styles.sortActive : styles.sortIncative}
                         onClick={handleLow}>Low to High</p>
-                    <p className={sort == "high" ? styles.sortActive : styles.sortIncative}
+                    <p className={sort === "high" ? styles.sortActive : styles.sortIncative}
                         onClick={handleHigh}>High to Low</p> 
                 </div>
            </div>
@@ -149,9 +149,9 @@ export default function Filter(){
                 </div>
 
                 <div className={styles.mSortName}>
-                    <p className={sort =="low" ? styles.sortActive : styles.sortIncative}
+                    <p className={sort ==="low" ? styles.sortActive : styles.sortIncative}
                         onClick={handleLow}>Low to High</p>
-                    <p className={sort == "high" ? styles.sortActive : styles.sortIncative}
+                    <p className={sort === "high" ? styles.sortActive : styles.sortIncative}
                         onClick={handleHigh}>High to Low</p> 
                 </div>
 

@@ -10,6 +10,7 @@ import orderPlacedAnimation from '../../utils/Animation - 1713521554351.json'
 export default function Cart(){
     const {cost , count, items, status} = useSelector(state=> state.cartReducer);
     const user = useSelector(state => state.auth.user);
+    const userStatus = useSelector(state => state.auth.status);
     const [hideWrapper, sethideWrapper] = useState();
     const navigate = useNavigate();
 
@@ -18,6 +19,15 @@ export default function Cart(){
     useEffect(()=>{
         dispatch(fetchCart());
     },[dispatch,user]);
+
+    useEffect(()=>{
+        // console.log("user Data: ")
+        // console.log(userStatus)
+        // console.log(user)
+        // console.log("cart Data: ")
+        // console.log(items)
+        // console.log(status)
+    },[dispatch,userStatus, items ])
 
 
     const handleClearCart = () =>{
@@ -42,7 +52,7 @@ export default function Cart(){
             </div>
         </div>
         )
-    } else if(user && items.length == 0 && status == 'idle'){
+    } else if(user && items.length === 0 && status === 'idle'){
         return(
             <div className={styles.cartWrapper}>
             <div className={styles.cardContainer}>
@@ -53,7 +63,7 @@ export default function Cart(){
     }else if(items.length > 0){
         return (
             <>
-            <div className={hideWrapper == 'hidden' ? styles.hidden : styles.cartWrapper}>
+            <div className={hideWrapper === 'hidden' ? styles.hidden : styles.cartWrapper}>
                 
                 <div className={styles.cardContainer}>
                 <div className={styles.cartHeader}>
@@ -75,7 +85,7 @@ export default function Cart(){
                 </div>
                 </div>
             </div>
-            {hideWrapper == 'hidden' && <div className={styles.orderPlaced}>
+            {hideWrapper === 'hidden' && <div className={styles.orderPlaced}>
                 <h1>Order Placed</h1>
             <Lottie  className={styles.animation} animationData={orderPlacedAnimation} loop={false} />;
             </div>
